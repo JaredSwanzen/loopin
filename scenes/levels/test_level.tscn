@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddqlkyw28ivwi"]
+[gd_scene load_steps=6 format=3 uid="uid://ddqlkyw28ivwi"]
 
 [ext_resource type="Texture2D" uid="uid://b4cct6vso4djf" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_iw3es"]
 [ext_resource type="PackedScene" uid="uid://5fmtrd340dlc" path="res://scenes/characters/player.tscn" id="2_hg71h"]
+[ext_resource type="PackedScene" uid="uid://0yst3q83kntx" path="res://scenes/characters/adult.tscn" id="3_bb74j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7irx"]
 texture = ExtResource("1_iw3es")
@@ -1433,3 +1434,7 @@ layer_0/tile_data = PackedInt32Array(2228226, 0, 0, 2293762, 0, 1, 2359298, 0, 2
 
 [node name="Player" parent="." instance=ExtResource("2_hg71h")]
 position = Vector2(57, 520)
+script = null
+
+[node name="Adult" parent="." instance=ExtResource("3_bb74j")]
+position = Vector2(149, 271)
