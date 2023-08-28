@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5fmtrd340dlc"]
+
+[ext_resource type="Texture2D" uid="uid://idu74n1n6n03" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_ecm11"]
+[ext_resource type="Script" path="res://scenes/characters/player.gd" id="1_wvnu1"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_wvnu1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ecm11")
+hframes = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, -24, 5, -24, 9, -20, 9, -14, 5, -10, 5, -9, 7, -7, 7, -3, 8, -2, 8, 1, 10, 2, 10, 6, 6, 14, 5, 21, 7, 23, 7, 24, -10, 24, -10, 23, -7, 20, -7, 17, -6, 12, -5, 7, -9, 4, -9, -5, -4, -10, -7, -12, -7, -20)
