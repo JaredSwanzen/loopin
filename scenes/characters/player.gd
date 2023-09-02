@@ -13,9 +13,16 @@ var currentAnimation=""
 
 func _physics_process(delta):
 	age = get_parent().current_age
+	
 	if age == "child":
-		$CollisionShape2D.shape.radius = BABY_COLLISION[0]
-		$CollisionShape2D.shape.height = BABY_COLLISION[1]
+		$CollisionShape2D.shape.radius = 10
+		$CollisionShape2D.shape.height = 31
+		$Body.scale = Vector2(0.8,0.8)
+	else:
+		$CollisionShape2D.shape.radius = 15
+		$CollisionShape2D.shape.height = 62
+		$Body.scale = Vector2(1.2,1.2)
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
