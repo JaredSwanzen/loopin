@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddqlkyw28ivwi"]
+[gd_scene load_steps=9 format=3 uid="uid://ddqlkyw28ivwi"]
 
 [ext_resource type="Texture2D" uid="uid://b4cct6vso4djf" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_iw3es"]
 [ext_resource type="PackedScene" uid="uid://5fmtrd340dlc" path="res://scenes/characters/player.tscn" id="2_hg71h"]
+[ext_resource type="Texture2D" uid="uid://c0w4i6nn564f2" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/KeyIcons.png" id="3_v47ur"]
+[ext_resource type="Texture2D" uid="uid://b5e0ha46ak6qr" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet-Black.png" id="4_pvym5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7irx"]
 texture = ExtResource("1_iw3es")
@@ -1422,6 +1424,11 @@ texture = ExtResource("1_iw3es")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_s7irx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d53lt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0tfb"]
+size = Vector2(38, 34)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="Ground" type="TileMap" parent="."]
@@ -1433,3 +1440,29 @@ layer_0/tile_data = PackedInt32Array(2228226, 0, 0, 2293762, 0, 1, 2359298, 0, 2
 
 [node name="Player" parent="." instance=ExtResource("2_hg71h")]
 position = Vector2(57, 520)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["pick_up_objects"]]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" groups=["pick_up_objects"]]
+position = Vector2(368.938, 534.5)
+scale = Vector2(0.628906, 0.59375)
+texture = ExtResource("3_v47ur")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" groups=["pick_up_objects"]]
+position = Vector2(369, 535)
+scale = Vector2(0.945313, 1)
+shape = SubResource("RectangleShape2D_d53lt")
+
+[node name="Enemy" type="RigidBody2D" parent="." groups=["crushable", "key"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" groups=["crushable", "key"]]
+position = Vector2(524, 531)
+texture = ExtResource("4_pvym5")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" groups=["crushable", "key"]]
+position = Vector2(524, 532)
+shape = SubResource("RectangleShape2D_c0tfb")
