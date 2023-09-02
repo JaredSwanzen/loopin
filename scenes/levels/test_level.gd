@@ -7,8 +7,8 @@ var times = ['04:00am', "08:00am", "12:00am", "16:00am", "20:00am", "00:00am"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_age="adult"
-	current_level=1
+	current_age="child"
+	current_level=5
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,5 +18,7 @@ func _process(delta):
 		current_age = "child"
 	if(current_level>2 and current_level<=4):
 		current_age = "adult"
+	if(current_level >4):
+		current_age = "elder"
 
 

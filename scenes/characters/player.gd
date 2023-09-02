@@ -82,17 +82,26 @@ func _physics_process(delta):
 func animateCharacter(animationName):
 	if age != "child":
 		$Head.show()
-		$Pants.show()
-		$Shirt.show()
 		$Hair.show()
-		$Shoes.show()
+		$Shirt.show()		
 		$Body.play(animationName)
-		$Head.play(animationName)
-		$Pants.play(animationName)
 		$Shirt.play(animationName)
 		$Hair.play(animationName)
-		$Shoes.play(animationName)
+		$Head.play(animationName)
+		if age == "elder":
+			$Pants.hide()
+			$Shoes.hide()
+			$ElderWheelChair.show()		
+			$ElderWheelChair.play(animationName);
+		else:
+			$Pants.show()
+			$Shoes.show()
+			$ElderWheelChair.hide()
+			$Pants.play(animationName)
+			$Shoes.play(animationName)
+			
 	else:
+		$ElderWheelChair.hide();
 		$Body.play(animationName)
 		$Head.hide()
 		$Pants.hide()
