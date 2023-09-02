@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddqlkyw28ivwi"]
+[gd_scene load_steps=7 format=3 uid="uid://ddqlkyw28ivwi"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_1epvs"]
 [ext_resource type="PackedScene" uid="uid://5fmtrd340dlc" path="res://scenes/characters/player.tscn" id="2_hg71h"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bac5nr52tv2qf" path="res://assets/lightMask.webp" id="4_k6epg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffwxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1l75"]
+size = Vector2(23, 549)
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_1epvs")
@@ -20,8 +23,13 @@ layer_1/tile_data = PackedInt32Array(1835009, 131072, 8, 1835010, 196608, 8, 183
 z_index = 2
 position = Vector2(30, 594)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+enabled = false
+zoom = Vector2(2, 2)
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = -0.705113
+enabled = false
 color = Color(0.580392, 0.666667, 0.901961, 1)
 energy = 0.8
 shadow_enabled = true
@@ -29,7 +37,7 @@ shadow_filter = 2
 shadow_filter_smooth = 0.7
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.717647, 0.717647, 0.717647, 1)
+color = Color(0.0117647, 0.0117647, 0.0117647, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(427, 524)
@@ -57,12 +65,6 @@ energy = 5.0
 texture = ExtResource("4_k6epg")
 texture_scale = 0.15
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="Time" type="Label" parent="Hud"]
@@ -72,4 +74,13 @@ offset_right = 603.0
 offset_bottom = 29.0
 text = "04:00"
 
+[node name="ladder" type="Area2D" parent="."]
+position = Vector2(1032, 418)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]
+position = Vector2(-1.5, -67.5)
+shape = SubResource("RectangleShape2D_s1l75")
+
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="ladder" to="Player" method="_on_ladder_body_entered"]
+[connection signal="body_exited" from="ladder" to="Player" method="_on_ladder_body_exited"]

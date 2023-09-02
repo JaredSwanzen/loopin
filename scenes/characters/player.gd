@@ -4,13 +4,16 @@ var SPEED = 200.0
 var JUMP_VELOCITY = -400.0
 const BABY_COLLISION = [10,38]
 const ADULT_COLLISION = [13, 48]
-
+var byLadder
 var age;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var currentAnimation=""
 
+func _ready():
+	byLadder = false
+	
 func _physics_process(delta):
 	age = get_parent().current_age
 	
@@ -23,8 +26,15 @@ func _physics_process(delta):
 		$CollisionShape2D.shape.height = 62
 		$Body.scale = Vector2(1.2,1.2)
 		
+	if byLadder == true:
+		velocity.y =0
+		if Input.is_action_pressed("ui_up"):
+			velocity.y = -100
+		if Input.is_action_pressed("ui_down"):
+			velocity.y = 100
+		
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and byLadder == false:
 		velocity.y += gravity * delta
 		
 	# Handle Jump.
@@ -71,6 +81,11 @@ func _physics_process(delta):
 	
 func animateCharacter(animationName):
 	if age != "child":
+		$Head.show()
+		$Pants.show()
+		$Shirt.show()
+		$Hair.show()
+		$Shoes.show()
 		$Body.play(animationName)
 		$Head.play(animationName)
 		$Pants.play(animationName)
@@ -87,9 +102,18 @@ func animateCharacter(animationName):
 
 
 func _on_next_level_body_entered(body):
+	print('it gets here')
 	position = Vector2(30, 594);
 	if get_parent().current_level == 6:
 		get_parent().current_level = 1
 	else:
 		get_parent().current_level += 1
 	
+
+
+func _on_ladder_body_entered(body):
+	byLadder=true
+
+
+func _on_ladder_body_exited(body):
+	byLadder=false
