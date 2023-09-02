@@ -1,33 +1,34 @@
-[gd_scene load_steps=261 format=3 uid="uid://5fmtrd340dlc"]
+[gd_scene load_steps=262 format=3 uid="uid://5fmtrd340dlc"]
 
 [ext_resource type="Script" path="res://scenes/characters/player.gd" id="1_wvnu1"]
-[ext_resource type="Texture2D" path="res://assets/player/Child/Child_hurt.png" id="2_3pcty"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Body/Emotes.png" id="2_o4ev2"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Body/Jump.png" id="3_5hu5h"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Body/Idle.png" id="3_6vo34"]
-[ext_resource type="Texture2D" path="res://assets/player/Child/Child_idle.png" id="3_scoqr"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Head/Idle.png" id="3_sl8gq"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Body/Walk.png" id="4_k83lk"]
-[ext_resource type="Texture2D" path="res://assets/player/Child/Child_walk.png" id="4_sl70j"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Head/Emotes.png" id="9_k3rjk"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Head/Jump.png" id="10_1eln7"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Head/Walk.png" id="10_tikcs"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Pants/Emotes.png" id="13_wyq7t"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Pants/Idle.png" id="14_bcp71"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Pants/Jump.png" id="15_awp1e"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Pants/Walk.png" id="16_ojqw3"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shirt/Emotes.png" id="17_an0ox"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shirt/Idle.png" id="17_h1n45"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shirt/Jump.png" id="18_0uoeh"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shirt/Walk.png" id="19_m2x1y"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Hair/Emotes.png" id="21_twg8l"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Hair/Idle.png" id="21_yv8k4"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Hair/Jump.png" id="22_c4j1b"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Hair/Walk.png" id="23_3mcyt"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shoes/Emotes.png" id="25_r3i5e"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shoes/Idle.png" id="26_5q8ul"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shoes/Jump.png" id="27_upswq"]
-[ext_resource type="Texture2D" path="res://assets/player/Adult/Clothes/Shoes/Walk.png" id="28_jlc3n"]
+[ext_resource type="Texture2D" uid="uid://c1f4tshfk6n4" path="res://assets/player/Child/Child_hurt.png" id="2_3pcty"]
+[ext_resource type="Texture2D" uid="uid://bpykwjootp66h" path="res://assets/player/Adult/Body/Emotes.png" id="2_o4ev2"]
+[ext_resource type="Texture2D" uid="uid://x00bdymyryfp" path="res://assets/player/Adult/Body/Jump.png" id="3_5hu5h"]
+[ext_resource type="Texture2D" uid="uid://l0y5eisx70ne" path="res://assets/player/Adult/Body/Idle.png" id="3_6vo34"]
+[ext_resource type="Texture2D" uid="uid://b613tsk56fijo" path="res://assets/player/Child/Child_idle.png" id="3_scoqr"]
+[ext_resource type="Texture2D" uid="uid://d1sxeoogd75nc" path="res://assets/player/Adult/Head/Idle.png" id="3_sl8gq"]
+[ext_resource type="Texture2D" uid="uid://cx0yd4k4mo87t" path="res://assets/player/Adult/Body/Walk.png" id="4_k83lk"]
+[ext_resource type="Texture2D" uid="uid://w00remg6dl5k" path="res://assets/player/Child/Child_walk.png" id="4_sl70j"]
+[ext_resource type="Texture2D" uid="uid://b3r4qj4a0mwto" path="res://assets/player/Adult/Head/Emotes.png" id="9_k3rjk"]
+[ext_resource type="Texture2D" uid="uid://cbx15kshsctfg" path="res://assets/player/Adult/Head/Jump.png" id="10_1eln7"]
+[ext_resource type="Texture2D" uid="uid://dt46sfg5cuo6h" path="res://assets/player/Adult/Head/Walk.png" id="10_tikcs"]
+[ext_resource type="Texture2D" uid="uid://bxut4b1jl35kj" path="res://assets/player/Adult/Clothes/Pants/Emotes.png" id="13_wyq7t"]
+[ext_resource type="Texture2D" uid="uid://3e6qmbymdcgr" path="res://assets/player/Adult/Clothes/Pants/Idle.png" id="14_bcp71"]
+[ext_resource type="Texture2D" uid="uid://crt6afbplhgny" path="res://assets/player/Adult/Clothes/Pants/Jump.png" id="15_awp1e"]
+[ext_resource type="Texture2D" uid="uid://djv7xtyajn2h2" path="res://assets/player/Adult/Clothes/Pants/Walk.png" id="16_ojqw3"]
+[ext_resource type="Texture2D" uid="uid://d2hg8i3facovx" path="res://assets/player/Adult/Clothes/Shirt/Emotes.png" id="17_an0ox"]
+[ext_resource type="Texture2D" uid="uid://sslibiq8uovw" path="res://assets/player/Adult/Clothes/Shirt/Idle.png" id="17_h1n45"]
+[ext_resource type="Texture2D" uid="uid://q31vqtbxi8cv" path="res://assets/player/Adult/Clothes/Shirt/Jump.png" id="18_0uoeh"]
+[ext_resource type="Texture2D" uid="uid://dl6tg60ugj1iv" path="res://assets/player/Adult/Clothes/Shirt/Walk.png" id="19_m2x1y"]
+[ext_resource type="Texture2D" uid="uid://dfigrp1kj8oyg" path="res://assets/player/Adult/Clothes/Hair/Emotes.png" id="21_twg8l"]
+[ext_resource type="Texture2D" uid="uid://dc3aong25bk0" path="res://assets/player/Adult/Clothes/Hair/Idle.png" id="21_yv8k4"]
+[ext_resource type="Texture2D" uid="uid://4u0bjg5idem" path="res://assets/player/Adult/Clothes/Hair/Jump.png" id="22_c4j1b"]
+[ext_resource type="Texture2D" uid="uid://bi8f0xcimptpo" path="res://assets/player/Adult/Clothes/Hair/Walk.png" id="23_3mcyt"]
+[ext_resource type="Texture2D" uid="uid://bo4osg4x50myb" path="res://assets/player/Adult/Clothes/Shoes/Emotes.png" id="25_r3i5e"]
+[ext_resource type="Texture2D" uid="uid://b815800rqn2eo" path="res://assets/player/Adult/Clothes/Shoes/Idle.png" id="26_5q8ul"]
+[ext_resource type="Texture2D" uid="uid://cpoo5wxlv6g5l" path="res://assets/player/Adult/Clothes/Shoes/Jump.png" id="27_upswq"]
+[ext_resource type="Texture2D" uid="uid://nv5oalwtcymo" path="res://assets/player/Adult/Clothes/Shoes/Walk.png" id="28_jlc3n"]
+[ext_resource type="Texture2D" uid="uid://bac5nr52tv2qf" path="res://assets/lightMask.webp" id="29_voe3u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gi3p"]
 radius = 15.0
@@ -1827,6 +1828,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_wvnu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1862,3 +1864,9 @@ animation = &"adult_falling"
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_mu5aj")
 animation = &"adult_walk_right"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.8, 0.729412, 0.141176, 1)
+energy = 0.5
+texture = ExtResource("29_voe3u")
+texture_scale = 2.0

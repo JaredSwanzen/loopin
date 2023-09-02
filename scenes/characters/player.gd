@@ -61,9 +61,14 @@ func _physics_process(delta):
 			if velocity.y > 0:
 				currentAnimation = "%s_falling" % age
 				animateCharacter(currentAnimation)
+	
+	
 	move_and_slide()
-
-
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i);
+		if collision:
+			emit_signal("mouse_entered",collision);
+	
 func animateCharacter(animationName):
 	if age != "child":
 		$Body.play(animationName)
@@ -79,3 +84,12 @@ func animateCharacter(animationName):
 		$Shirt.hide()
 		$Hair.hide()
 		$Shoes.hide()
+
+
+func _on_next_level_body_entered(body):
+	position = Vector2(30, 594);
+	if get_parent().current_level == 6:
+		get_parent().current_level = 1
+	else:
+		get_parent().current_level += 1
+	
