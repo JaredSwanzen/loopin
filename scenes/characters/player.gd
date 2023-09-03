@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 200.0
+@export var SPEED = 200.0
 var JUMP_VELOCITY = -400.0
 const BABY_COLLISION = [10,38]
 const ADULT_COLLISION = [13, 48]
@@ -116,7 +116,7 @@ func animateCharacter(animationName):
 func _on_next_level_body_entered(_body):
 	print('it gets here')
 	sfx_door.play(0.1)
-	position = Vector2(30, 594);
+	position = Vector2(30, 500);
 	if get_parent().current_level == 6:
 		get_parent().current_level = 1
 	else:
