@@ -45,6 +45,7 @@ offset_bottom = 42.0
 text = "04:00"
 
 [node name="Player" parent="." instance=ExtResource("2_hg71h")]
+visible = false
 z_index = 2
 position = Vector2(133, 478)
 metadata/_edit_group_ = true
