@@ -13,7 +13,7 @@ var time:float = 0.0
 func _ready():
 	current_age="child"
 	current_level=1
-	gradients = [gradient.gradient.sample(0.2), gradient.gradient.sample(0.4), gradient.gradient.sample(1), gradient.gradient.sample(0.6), gradient.gradient.sample(0.1), gradient.gradient.sample(0)]
+	gradients = [gradient.gradient.sample(0.2), gradient.gradient.sample(0.4), gradient.gradient.sample(1), gradient.gradient.sample(0.6), gradient.gradient.sample(0.05), gradient.gradient.sample(0)]
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
