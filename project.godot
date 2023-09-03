@@ -11,10 +11,15 @@ config_version=5
 [application]
 
 config/name="Loopin"
+run/main_scene="res://scenes/levels/test_level.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_render/layer_1="Scene"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
