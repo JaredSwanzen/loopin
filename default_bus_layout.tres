@@ -1,0 +1,15 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://cayhi407yqu7g"]
+
+[resource]
+bus/1/name = &"bgMusicBus"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -7.26851
+bus/1/send = &"Master"
+bus/2/name = &"playerMoveSfx"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = -3.54298
+bus/2/send = &"Master"

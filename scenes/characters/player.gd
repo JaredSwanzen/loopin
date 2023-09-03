@@ -6,6 +6,8 @@ const BABY_COLLISION = [10,38]
 const ADULT_COLLISION = [13, 48]
 var byLadder
 var age;
+@onready var sfx_jump = $sfxJump
+@onready var sfx_door = $sfxDoor
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -39,6 +41,7 @@ func _physics_process(delta):
 		
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and age == 'adult':
+		sfx_jump.play(0.05)
 		velocity.y = JUMP_VELOCITY
 	
 	# Get the input direction and handle the movement/deceleration.
@@ -112,6 +115,7 @@ func animateCharacter(animationName):
 
 func _on_next_level_body_entered(_body):
 	print('it gets here')
+	sfx_door.play(0.1)
 	position = Vector2(30, 594);
 	if get_parent().current_level == 6:
 		get_parent().current_level = 1
