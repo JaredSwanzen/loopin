@@ -110,7 +110,7 @@ func animateCharacter(animationName):
 		$Shoes.hide()
 
 
-func _on_next_level_body_entered(body):
+func _on_next_level_body_entered(_body):
 	print('it gets here')
 	position = Vector2(30, 594);
 	if get_parent().current_level == 6:
@@ -120,9 +120,9 @@ func _on_next_level_body_entered(body):
 	
 
 
-func _on_ladder_body_entered(body):
+func _on_ladder_body_entered(_body):
 	byLadder=true
 
 
-func _on_ladder_body_exited(body):
+func _on_ladder_body_exited(_body):
 	byLadder=false
