@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cqo5cqd3gpsqp" path="res://assets/lighting/daynightcycle-gradient-texture.tres" id="2_o8p5f"]
 [ext_resource type="PackedScene" uid="uid://bhlbnaqjbxs6v" path="res://scenes/lighting/fire.tscn" id="3_yqxwh"]
 [ext_resource type="Texture2D" uid="uid://bac5nr52tv2qf" path="res://assets/lightMask.webp" id="4_k6epg"]
+[ext_resource type="AudioStream" uid="uid://d0dm5236rp6jm" path="res://assets/audio/cartoon-jump-6462.mp3" id="7_r8pg2"]
+[ext_resource type="AudioStream" uid="uid://bq13lkbi8cw2o" path="res://bgMus.mp3" id="7_v0ecg"]
+[ext_resource type="AudioStream" uid="uid://dpaigismvmslf" path="res://assets/audio/open-and-closed-door-156814.mp3" id="8_dy4vi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ffwxx"]
 
@@ -54,6 +57,14 @@ metadata/_edit_group_ = true
 enabled = false
 zoom = Vector2(2, 2)
 
+[node name="sfxJump" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("7_r8pg2")
+volume_db = -10.211
+
+[node name="sfxDoor" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("8_dy4vi")
+volume_db = -12.858
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 skew = 0.347321
 energy = 0.8
@@ -75,5 +86,9 @@ texture = ExtResource("4_k6epg")
 [node name="PointLight2D3" type="PointLight2D" parent="."]
 position = Vector2(554, 418)
 texture = ExtResource("4_k6epg")
+
+[node name="bgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_v0ecg")
+autoplay = true
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]

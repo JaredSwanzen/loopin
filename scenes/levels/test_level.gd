@@ -7,6 +7,7 @@ var times = ['04:00am', "08:00am", "12:00am", "16:00am", "20:00am", "00:00am"]
 var angles = [-0.7, -0.35, 0.17, 0.9, -0.52, 0.35]
 @export var gradient:GradientTexture1D
 var gradients = []
+@onready var bgMusic = $bgMusic
 
 var time:float = 0.0
 
@@ -15,6 +16,7 @@ func _ready():
 	current_age="child"
 	current_level=4
 	gradients = [gradient.gradient.sample(0.2), gradient.gradient.sample(0.4), gradient.gradient.sample(1), gradient.gradient.sample(0.6), gradient.gradient.sample(0.05), gradient.gradient.sample(0)]
+	bgMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
