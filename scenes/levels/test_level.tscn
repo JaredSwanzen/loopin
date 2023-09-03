@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddqlkyw28ivwi"]
+[gd_scene load_steps=11 format=3 uid="uid://ddqlkyw28ivwi"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_1epvs"]
 [ext_resource type="PackedScene" uid="uid://5fmtrd340dlc" path="res://scenes/characters/player.tscn" id="2_hg71h"]
@@ -34,9 +34,16 @@ texture = ExtResource("4_k6epg")
 texture_scale = 0.15
 
 [node name="fire" parent="." instance=ExtResource("3_yqxwh")]
-visible = false
 z_index = 1
-position = Vector2(1117, 130)
+position = Vector2(629, 278)
+
+[node name="fire" parent="fire" instance=ExtResource("3_yqxwh")]
+z_index = 1
+position = Vector2(-224, 131)
+
+[node name="fire2" parent="fire" instance=ExtResource("3_yqxwh")]
+z_index = 1
+position = Vector2(268, 32)
 
 [node name="Hud" type="CanvasLayer" parent="."]
 
@@ -48,14 +55,17 @@ offset_bottom = 42.0
 text = "04:00"
 
 [node name="Player" parent="." instance=ExtResource("2_hg71h")]
-visible = false
 z_index = 2
 position = Vector2(133, 478)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-enabled = false
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1180
+limit_bottom = 1000
+limit_smoothed = true
 
 [node name="sfxJump" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("7_r8pg2")
@@ -75,20 +85,24 @@ shadow_filter_smooth = 0.7
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.317647, 0.317647, 0.317647, 1)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(427, 524)
-texture = ExtResource("4_k6epg")
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(377, 335)
-texture = ExtResource("4_k6epg")
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(554, 418)
-texture = ExtResource("4_k6epg")
-
 [node name="bgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_v0ecg")
 autoplay = true
 
+[node name="BabyTeleport" type="Area2D" parent="."]
+position = Vector2(1143, 514)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BabyTeleport"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_ffwxx")
+
+[node name="PointLight2D4" type="PointLight2D" parent="BabyTeleport"]
+position = Vector2(-1, 2)
+color = Color(0.827451, 0.721569, 1, 1)
+energy = 5.0
+texture = ExtResource("4_k6epg")
+texture_scale = 0.15
+
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="BabyTeleport" to="Player" method="_on_baby_teleport_body_entered"]

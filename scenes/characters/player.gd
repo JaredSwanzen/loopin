@@ -114,7 +114,6 @@ func animateCharacter(animationName):
 
 
 func _on_next_level_body_entered(_body):
-	print('it gets here')
 	sfx_door.play(0.1)
 	position = Vector2(30, 500);
 	if get_parent().current_level == 6:
@@ -130,3 +129,8 @@ func _on_ladder_body_entered(_body):
 
 func _on_ladder_body_exited(_body):
 	byLadder=false
+
+
+func _on_baby_teleport_body_entered(body):
+	if age != 'adult':
+		position = Vector2(1060, 105)
